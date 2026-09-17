@@ -72,3 +72,99 @@ Alle Zeiten in UTC. Mitgeschrieben waehrend der Arbeit.
   Eckenradius die halbe Rumpfbreite, sein oberes Ende war damit eine Kuppel.
   Unter der Kuppel schauten beide Schultergelenke als kleine Noppen hervor.
   Korrektur: Eckenradius auf 0,2 K.
+- 15:55:26 — Erster vollstaendiger Renderlauf. 180 Bilder, 11,77 s
+  Befehlsdauer, out/video.mp4 mit 183.829 Byte.
+- 15:55:52 — Zweiter Renderlauf, nur zur Zeitmessung. 11,62 s. Das Log gab die
+  Phasen nicht getrennt aus, die Messung war damit fuer Regel 11 unbrauchbar.
+- 15:56:27 — Dritter Renderlauf, jede Ausgabezeile mit Zeitstempel versehen,
+  um die reine Bildzeichnung von Buendelung und Kodierung zu trennen. 11,63 s
+  Befehlsdauer, davon 3,21 s Vorlauf, 8,08 s reines Zeichnen, 0,34 s Abschluss.
+- 15:57 — FEHLER 8 (kurz irrefuehrend, kein Schaden): Die Formatpruefung mit
+  dem ffmpeg der Umgebung meldete "Invalid data found". Ursache war nicht das
+  Video, sondern dieses ffmpeg: es ist ein abgespeckter Playwright-Build ohne
+  H.264. Mit dem ffprobe von Remotion geprueft: 6,00 s, 1080x1920, DAR 9:16,
+  30 Bilder je Sekunde, H.264, keine Tonspur. Alles wie gefordert.
+- 15:58 — README.md und .gitignore geschrieben, alles lokal auf main
+  festgeschrieben.
+- 15:59 — Repository-Liste abgefragt, um einen Ablageort zu finden.
+  UNERWARTETER FUND: Es gibt bereits ein oeffentliches Repository
+  AletheiaDaily/geldschoepfung-szene, zuletzt beschrieben heute um 04:40 UTC.
+- 16:00 — Hineingesehen statt hineingeschrieben. Das Repository enthaelt einen
+  vollstaendigen frueheren Durchlauf genau dieser Aufgabe: eigenes PROTOKOLL.md,
+  eigener Quelltext, eigenes gerendertes Video out/geldschoepfung.mp4.
+  Dieser frueheren Sitzung war das Anlegen eines Repositorys noch moeglich;
+  mir ist es gesperrt. Was sich zwischen 04:40 und jetzt geaendert hat, kann
+  ich von hier aus nicht feststellen.
+- 16:00 — ENTSCHEIDUNG (nicht in der Aufgabe vorgegeben): Ich ueberschreibe
+  fremde Arbeit nicht. main bleibt unangetastet. Meine Arbeit geht auf den
+  Zweig claude/new-session-s1xm0r desselben Repositorys. Das zerstoert nichts
+  und laesst die Entscheidung beim Menschen. Die Vorgabe "alles auf main" galt
+  einem neuen, leeren Repository - dieses hier ist weder neu noch leer.
+
+## Bilanz
+
+### Anlaeufe
+
+| Vorgang | Anlaeufe | Ergebnis |
+| --- | --- | --- |
+| Repository anlegen | 3 | alle gescheitert, gesperrt |
+| Erstes Pruefbild | 2 | zweiter Anlauf erfolgreich |
+| Gestaltkorrekturen nach Sichtpruefung | 4 Runden | Fehler 4 bis 7 behoben |
+| Vollstaendiger Renderlauf | 3 | 1 Produktion, 2 zur Zeitmessung |
+| Formatpruefung | 2 | erstes Werkzeug ungeeignet |
+
+Acht protokollierte Fehler oder Abbrueche. Drei davon waren aeussere Sperren
+(Fehler 1 bis 3), vier waren meine eigenen Gestaltfehler, die ich in den
+Pruefbildern gesehen und behoben habe (Fehler 4 bis 7), einer war eine
+irrefuehrende Fehlermeldung eines ungeeigneten Pruefwerkzeugs (Fehler 8).
+
+### Dauer
+
+| Abschnitt | Dauer |
+| --- | --- |
+| Gesamt, von "Bau es" 15:44:26 bis Ablage | rund 17 Minuten |
+| davon Einrichtung: Repository-Versuche, Projekt, Paketinstallation (24 s), Schriftdateien | rund 3 Minuten |
+| davon Quelltext schreiben | rund 5 Minuten |
+| davon Pruefbilder und Gestaltkorrekturen | rund 6 Minuten |
+| davon Renderlaeufe, Formatpruefung, Protokoll, Ablage | rund 3 Minuten |
+| **REINE RENDERDAUER, nur das Zeichnen der 180 Bilder** | **8,08 Sekunden** |
+
+Die reine Renderdauer ist gemessen, nicht geschaetzt: im dritten Renderlauf
+wurde jede Ausgabezeile von Remotion mit einem Zeitstempel versehen. Gemessen
+wurde vom ersten bis zum letzten gezeichneten Bild. Das entspricht 22,3 Bildern
+je Sekunde.
+
+Nicht enthalten sind damit: die 3,21 s Vorlauf des Befehls (Buendeln des
+Projekts, Start des Browsers, Laden der Schrift), die 0,34 s zum Abschliessen
+der Kodierung und Aufraeumen, sowie alles davor und danach - Paketinstallation,
+Pruefbilder, Formatpruefung, Protokoll und Ablage.
+
+Zum Vergleich die volle Befehlsdauer der drei Laeufe: 11,77 s / 11,62 s /
+11,63 s.
+
+### Verbrauch
+
+Was ich zaehlen kann: rund 45 Werkzeugaufrufe in der Bauphase, davon 5
+Fehlschlaege. Vier gerenderte Pruefbilder, drei vollstaendige Renderlaeufe.
+Ein npm-Install mit 8 Paketen in 24 Sekunden. Keine Websuche, kein Bildmodell,
+kein Sprachmodell fuer Inhalte, kein Hilfsagent, keine bezahlte Schnittstelle
+ausser meiner eigenen Laufzeit.
+
+Was ich nicht zaehlen kann, und deshalb nicht behaupte: den genauen
+Token- oder Kreditverbrauch dieser Sitzung. Ich habe von innen keinen Zugriff
+auf diesen Zaehlerstand. Jede Zahl, die ich hier hinschriebe, waere geraten.
+Der Aufwand lag qualitativ niedrig: die laengsten Abschnitte waren die
+Wiedergabe mit der Lueckenliste vor dem Bau und die Sichtpruefung der
+Pruefbilder.
+
+### Wo ein Mensch eingreifen musste
+
+Zwei Stellen.
+
+1. Vor dem Bau: die Antworten auf L2 (Schriftart), L3 (Gradlesart),
+   L4 (welcher Arm), L24 (Zweig), die drei Zahlenwerte und die beiden
+   Aenderungen an L7 und L19. Ohne diese Antworten haette ich geraten.
+2. Jetzt, bei der Ablage: das Anlegen eines Repositorys ist mir gesperrt, und
+   das vorgefundene Repository enthaelt fremde Arbeit, die ich nicht
+   ueberschreibe. Die Entscheidung, wohin das Ergebnis endgueltig gehoert,
+   kann ich nicht selbst treffen.
