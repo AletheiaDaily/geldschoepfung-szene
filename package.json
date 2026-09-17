@@ -1,0 +1,21 @@
+{
+  "name": "geldschoepfung-szene",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Remotion-Szene: 9:16, 6 Sekunden, Gebaeude aus Grundformen und Figur mit Armbewegung",
+  "scripts": {
+    "dev": "remotion studio",
+    "render": "remotion render Szene out/geldschoepfung.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.525",
+    "@remotion/google-fonts": "4.0.525",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.525"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.2",
+    "typescript": "5.9.3"
+  }
+}
